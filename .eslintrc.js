@@ -6,11 +6,42 @@ module.exports = {
   'extends': [
     'plugin:vue/essential',
     '@vue/standard',
-    '@vue/typescript'
+    '@vue/typescript',
+    'eslint:recommended'
   ],
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    "indent": ["error", 2],
+    "import/no-unresolved": "off",
+    "strict": "off",
+    "no-console": "off",
+    "no-extra-semi": "off",
+    "no-underscore-dangle": "off",
+    "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
+    "space-before-function-paren": ["error", "never"],
+    "semi": ["error", "always", {
+      "omitLastInOneLineBlock": true
+    }],
+    "use-isnan": ["error"],
+    "comma-dangle": ["error", {
+      "arrays": "always",
+      "objects": "always",
+      "imports": "never",
+      "exports": "never",
+      "functions": "ignore"
+    }],
+    "no-unused-vars": "off",
+    "max-len": [
+      "error",
+      120,
+      2,
+      {
+        "ignoreUrls": true,
+        "ignoreComments": true,
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ]
   },
   parserOptions: {
     parser: '@typescript-eslint/parser'
